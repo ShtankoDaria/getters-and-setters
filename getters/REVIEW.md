@@ -1,36 +1,28 @@
 # functions-to-methods/
 
-> 3/30/2020, 5:39:34 PM 
+> 3/30/2020, 6:08:09 PM 
 
-## getters/ - error
+## getters/ - pass
 
 * [../REVIEW.md](../REVIEW.md)
 
 ### files
 
-* [refactor-1.js](#refactor-1js---error) - error
-* [refactor-2.js](#refactor-2js---error) - error
-* [refactor-3.js](#refactor-3js---fail) - fail
+* [refactor-1.js](#refactor-1js---pass) - pass
+* [refactor-2.js](#refactor-2js---pass) - pass
+* [refactor-3.js](#refactor-3js---pass) - pass
 
 ---
 
-## refactor-1.js - error
+## refactor-1.js - pass
 
 * [review source](refactor-1.js)
 
 ```txt
 + PASS: Test 1
-ReferenceError: __ is not defined
-    at Object.<anonymous> ( [...] \getters\refactor-1.js:20:23)
-    at Module._compile (internal/modules/cjs/loader.js:1157:30)
-    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1177:10)
-    at Module.load (internal/modules/cjs/loader.js:1001:32)
-    at Function.Module._load (internal/modules/cjs/loader.js:900:14)
-    at Module.require (internal/modules/cjs/loader.js:1043:19)
-    at require (internal/modules/cjs/helpers.js:77:18)
-    at evaluateFile ( [...] \review.js:101:5)
-    at  [...] \review.js:139:28
-    at Array.map (<anonymous>)
++ PASS: Test 2
++ PASS: Test 3
++ PASS: Test 4
 ```
 
 ```js
@@ -53,7 +45,7 @@ const obj1Greeting1 = obj1.getGreeting();
 const test1 = obj1Greeting1 === `hi, I'm obj1`;
 console.assert(test1, 'Test 1');
 
-const obj2Greeting1 = __; // fix this line!
+const obj2Greeting1 = obj2.greeting; // fix this line!
 const test2 = obj2Greeting1 === `hi, I'm obj2`;
 console.assert(test2, 'Test 2');
 
@@ -64,7 +56,7 @@ const obj1Greeting2 = obj1.getGreeting();
 const test3 = obj1Greeting2 === `hi, I'm first`;
 console.assert(test3, 'Test 3');
 
-const obj2Greeting2 = __; // fix this line!
+const obj2Greeting2 = obj2.greeting; // fix this line!
 const test4 = obj2Greeting2 === `hi, I'm second`;
 console.assert(test4, 'Test 4');
 
@@ -74,22 +66,21 @@ console.assert(test4, 'Test 4');
 
 ---
 
-## refactor-2.js - error
+## refactor-2.js - pass
 
 * [review source](refactor-2.js)
 
 ```txt
-ReferenceError: __ is not defined
-    at Object.<anonymous> ( [...] \getters\refactor-2.js:17:19)
-    at Module._compile (internal/modules/cjs/loader.js:1157:30)
-    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1177:10)
-    at Module.load (internal/modules/cjs/loader.js:1001:32)
-    at Function.Module._load (internal/modules/cjs/loader.js:900:14)
-    at Module.require (internal/modules/cjs/loader.js:1043:19)
-    at require (internal/modules/cjs/helpers.js:77:18)
-    at evaluateFile ( [...] \review.js:101:5)
-    at  [...] \review.js:139:28
-    at Array.map (<anonymous>)
++ PASS: Test 1
++ PASS: Test 2
++ PASS: Test 3
++ PASS: Test 4
++ PASS: Test 5
++ PASS: Test 6
++ PASS: Test 7
++ PASS: Test 8
++ PASS: Test 9
++ PASS: Test 10
 ```
 
 ```js
@@ -109,12 +100,12 @@ const obj2 = {
   }
 }
 
-const obj1mods3 = __;
+const obj1mods3 = obj1.getZeroMods();
 console.assert(obj1mods3[0] === 12, 'Test 1');
 console.assert(obj1mods3[1] === 9, 'Test 2');
 console.assert(obj1mods3[2] === 36, 'Test 3');
 
-const obj2mods3 = null;
+const obj2mods3 = obj2.zeroMods;
 console.assert(obj2mods3[0] === 12, 'Test 4');
 console.assert(obj2mods3[1] === 9, 'Test 5');
 console.assert(obj2mods3[2] === 36, 'Test 6');
@@ -123,11 +114,11 @@ console.assert(obj2mods3[2] === 36, 'Test 6');
 obj1.modulo = 6;
 obj2.modulo = 6;
 
-const obj1mods3second = __;
+const obj1mods3second = obj1.getZeroMods();
 console.assert(obj1mods3second[0] === 12, 'Test 7');
 console.assert(obj1mods3second[1] === 36, 'Test 8');
 
-const obj2mods3second = __;
+const obj2mods3second = obj2.zeroMods;
 console.assert(obj2mods3second[0] === 12, 'Test 9');
 console.assert(obj2mods3second[1] === 36, 'Test 10');
 
@@ -137,15 +128,15 @@ console.assert(obj2mods3second[1] === 36, 'Test 10');
 
 ---
 
-## refactor-3.js - fail
+## refactor-3.js - pass
 
 * [review source](refactor-3.js)
 
 ```txt
 + PASS: Test 1
-- FAIL: Test 2
-- FAIL: Test 3
-- FAIL: Test 4
++ PASS: Test 2
++ PASS: Test 3
++ PASS: Test 4
 ```
 
 ```js
@@ -160,7 +151,7 @@ const obj1 = {
 const obj2 = {
   entries: { first: 'hi!', second: 'bye!' },
   currentKey: 'second',
-  get CurrentEntry () {
+  get currentEntry () {
     return this.entries[this.currentKey];
   }
 }
@@ -170,16 +161,16 @@ const obj2 = {
 const obj1current1 = obj1.getCurrentEntry();
 console.assert(obj1current1 === 'bye!', 'Test 1');
 
-const obj2current1 = obj1.getCurrentEntry;
+const obj2current1 = obj2.currentEntry;
 console.assert(obj2current1 === 'bye!', 'Test 2');
 
-obj1.currentKey = obj1.getCurrentEntry();
-obj2.currentKey = obj1.getCurrentEntry;
+obj1.currentKey = 'first';
+obj2.currentKey = 'first';
 
 const obj1current2 = obj1.getCurrentEntry();
 console.assert(obj1current2 === 'hi!', 'Test 3');
 
-const obj2current2 = obj1.getCurrentEntry;
+const obj2current2 = obj2.currentEntry;
 console.assert(obj2current2 === 'hi!', 'Test 4');
 
 ```
