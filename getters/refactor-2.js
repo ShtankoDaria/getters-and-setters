@@ -9,6 +9,9 @@ const obj1 = {
 const obj2 = {
   numbers: [12, 4, 9, 36, 7, 0, -2],
   modulo: 3,
+  get zeroMods() {
+    return this.numbers.filter(x => x % this.modulo === 0);
+  }
 }
 
 const obj1mods3 = __;

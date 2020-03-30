@@ -9,6 +9,7 @@ const obj2 = {
   name: 'obj2',
   get greeting() {
     // write me!
+    return `hi, I'm ${this.name}`;
   }
 }
 

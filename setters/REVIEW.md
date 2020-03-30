@@ -1,6 +1,6 @@
 # functions-to-methods/
 
-> 3/10/2020, 1:12:28 PM 
+> 3/30/2020, 5:39:34 PM 
 
 ## setters/ - error
 
@@ -68,15 +68,15 @@ console.assert(obj2.greeting === "hi, I'm bye!", 'Test 4');
 + PASS: Test 3
 - FAIL: Test 4
 ReferenceError: __ is not defined
-    at Object.<anonymous> ( [...] /setters/refactor-2.js:41:45)
-    at Module._compile (internal/modules/cjs/loader.js:777:30)
-    at Object.Module._extensions..js (internal/modules/cjs/loader.js:788:10)
-    at Module.load (internal/modules/cjs/loader.js:643:32)
-    at Function.Module._load (internal/modules/cjs/loader.js:556:12)
-    at Module.require (internal/modules/cjs/loader.js:683:19)
-    at require (internal/modules/cjs/helpers.js:16:16)
-    at evaluateFile ( [...] /review.js:101:5)
-    at  [...] /review.js:139:28
+    at Object.<anonymous> ( [...] \setters\refactor-2.js:41:45)
+    at Module._compile (internal/modules/cjs/loader.js:1157:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1177:10)
+    at Module.load (internal/modules/cjs/loader.js:1001:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:900:14)
+    at Module.require (internal/modules/cjs/loader.js:1043:19)
+    at require (internal/modules/cjs/helpers.js:77:18)
+    at evaluateFile ( [...] \review.js:101:5)
+    at  [...] \review.js:139:28
     at Array.map (<anonymous>)
 ```
 
@@ -124,7 +124,7 @@ obj2.modulo = 6;
 const test5 = JSON.stringify(obj1.mods) === __;
 console.assert(test5, 'Test 5');
 
-const test6 = JSON.stringify(obj1.mods) === __;
+const test6 = JSON.stringify(obj2.mods) === __;
 console.assert(test6, 'Test 6');
 
 ```
@@ -140,15 +140,15 @@ console.assert(test6, 'Test 6');
 ```txt
 + PASS: Test 1
 TypeError: Cannot read property 'second' of undefined
-    at Object.<anonymous> ( [...] /setters/refactor-3.js:19:29)
-    at Module._compile (internal/modules/cjs/loader.js:777:30)
-    at Object.Module._extensions..js (internal/modules/cjs/loader.js:788:10)
-    at Module.load (internal/modules/cjs/loader.js:643:32)
-    at Function.Module._load (internal/modules/cjs/loader.js:556:12)
-    at Module.require (internal/modules/cjs/loader.js:683:19)
-    at require (internal/modules/cjs/helpers.js:16:16)
-    at evaluateFile ( [...] /review.js:101:5)
-    at  [...] /review.js:139:28
+    at Object.<anonymous> ( [...] \setters\refactor-3.js:19:29)
+    at Module._compile (internal/modules/cjs/loader.js:1157:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1177:10)
+    at Module.load (internal/modules/cjs/loader.js:1001:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:900:14)
+    at Module.require (internal/modules/cjs/loader.js:1043:19)
+    at require (internal/modules/cjs/helpers.js:77:18)
+    at evaluateFile ( [...] \review.js:101:5)
+    at  [...] \review.js:139:28
     at Array.map (<anonymous>)
 ```
 
